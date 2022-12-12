@@ -4,19 +4,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewpo rt" content="width=device-width, initial-scale=1.0">
   <title>Balloon Pop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<form id="player-form" onsubmit="setPlayer(event)">
-  <div>
-    <label for="name">Name:</label>
+  <header>
+    <div class="container shadow">
+      <img src="balloon-pop-logo.png" alt="balloon-pop-logo.png">
+    </div>
+  </header>
+
+<main class="card container">
+  
+  <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
+    <div>
+    <label for="name"> <i class="fa fa-user-circle" aria-hidden="false"></i>
+      <span> Player Name:</span></label>
     <input type="text" name="playerName" required>
   </div>
   <button type="submit">Ok</button>
 </form>
 
 <section class ="game hidden" id="game">
+
+<div class="card bg-dark text-light">
+  <span id="player-name"></span>
+</div>
+
   <div>
     <button onclick="changePlayer()">Change Player</button>
   </div>
@@ -40,7 +56,7 @@
   <div id="balloon" class="balloon"></div>
 
 </section>
-
+</main>
 
 <script src="main.js"></script>
 </body>

@@ -1,3 +1,4 @@
+// @ts-nocheck
 let startButton = document.getElementById("start-button")
 let inflateButton = document.getElementById("inflate-button")
 
@@ -60,10 +61,12 @@ function draw(){
   let clickCountElem = document.getElementById("click-count")
   let popCountElem =  document.getElementById("pop-count")
   let highPopCountElem = document.getElementById("high-pop-count")
+  let playerNameElem = document.getElementById("player-name")
   
   popCountElem.innerText = currentPopCount.toString()
   clickCountElem.innerText = clickCount.toString()
   highPopCountElem.innerText = currentPlayer.topScore.toString()
+  playerNameElem.innerText= currentPlayer.name
   balloonElement.style.height = height + "px"
   balloonElement.style.width = width + "px"
   
@@ -116,6 +119,7 @@ console.log(currentPlayer)
 }
 
 function changePlayer(){
+
   document.getElementById("player-form").classList.remove("hidden")
   document.getElementById("game").classList.add("hidden")
 }
@@ -125,6 +129,7 @@ function savePlayers(){
 }
 
 function loadPlayers(){
+
   let playersData = JSON.parse(window.localStorage.getItem("players"))
   if(playersData){
     players = playersData
