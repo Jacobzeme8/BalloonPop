@@ -1,6 +1,5 @@
 // @ts-nocheck
-let startButton = document.getElementById("start-button")
-let inflateButton = document.getElementById("inflate-button")
+
 
 // #region GAME LOGIC AND DATA
 
@@ -17,9 +16,9 @@ let clockId = 0
 let timeRemaining = 0
 
 function startGame(){
-
-  startButton.setAttribute("disabled", "true")
-  inflateButton.removeAttribute("disabled")
+document.getElementById("game-controls").classList.remove("hidden")
+document.getElementById("main-controls").classList.add("hidden")
+  
   startClock()
   setTimeout(stopGame, gameLength)
 
@@ -45,6 +44,7 @@ function inflate(){
   clickCount++
   height += inflationRate
   width += inflationRate
+  
   
   if(height >= maxsize){
     console.log("pop the balloon")
@@ -75,8 +75,8 @@ function draw(){
 function stopGame(){
   console.log("stopped game")
   
-  startButton.removeAttribute("disabled")
-  inflateButton.setAttribute("disabled", "true")
+  document.getElementById("game-controls").classList.add("hidden")
+  document.getElementById("main-controls").classList.remove("hidden")
   
   clickCount=0
   height = 120
