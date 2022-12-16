@@ -5,7 +5,8 @@
   <meta name="viewpo rt" content="width=device-width, initial-scale=1.0">
   <title>Balloon Pop</title>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  " crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,7 +50,7 @@
   
   <div id="game-controls" class="hidden">
 
-  <button id="inflate-button" onclick="inflate()">Inflate <span id ="click-count"></span></button>
+  <button id="inflate-button" onclick="inflate()">Inflate </button>
   <div>
     <span>
       Balloons Popped</span>
@@ -60,7 +61,18 @@
     <span>Time Remaining:</span>
     <span id="countdown">0</span>
   </div>
+
+<div class="game-container d-flex">
+  <div class="pump" onclick="inflate()">
+    <div class="handle"></div>
+    <div class="pump-box">
+      <span id ="click-count"></span>
+    </div>
+  </div>
   <div id="balloon" class="balloon"></div>
+</div>
+
+
   </div>
 </section>
 </main>
